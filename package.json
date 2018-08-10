@@ -1,8 +1,8 @@
 {
-  "name": "sbueringer-hubot-kubernetes",
+  "name": "rk295-hubot-kubernetes",
   "description": "Hubot Kubernetes integration",
-  "version": "0.4.0",
-  "author": "Stefan Bueringer <npm.sbueringer@gmail.com>",
+  "version": "0.0.1",
+  "author": "Robin Kearney <robin@kearney.co.uk>",
   "license": "MIT",
   "keywords": [
     "hubot",
@@ -12,10 +12,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/sbueringer/hubot-kubernetes"
+    "url": "git://github.com/rk295/hubot-kubernetes"
   },
   "bugs": {
-    "url": "https://github.com/sbueringer/hubot-kubernetes/issues"
+    "url": "https://github.com/rk295/hubot-kubernetes/issues"
   },
   "main": "index.coffee",
   "dependencies": {
