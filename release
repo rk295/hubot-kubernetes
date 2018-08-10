@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+IFS=$'\n\t'
+
+releaseVersion="${1:-}"
+
+if [[ -z "$releaseVersion" ]]; then
+    echo "Usage: $0 <release version>"
+    echo ""
+    echo "Release version must be of the format 0.0.0"
+    exit 1
+fi
+
+currentVersion="$(jq -r '.version' package.json)"
+
+if [[ "$releaseVersion" = "$currentVersion" ]]; then
+    echo "ERROR: New version ($releaseVersion) is the same as the current version ($currentVersion)"
+    exit 1
+fi
+
+echo "INFO: Updating package.json"
+gsed -i "s/\"version\": \"$currentVersion\"/\"version\": \"$releaseVersion\"/g" package.json
+
+echo "INFO: Commiting change to package.json"
+git commit -m "Release" package.json
+
+echo "INFO: Creating tag"
+git tag v$releaseVersion
+
+echo "INFO: Pushing tag"
+git push origin v$releaseVersion
