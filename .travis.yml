@@ -5,12 +5,13 @@ sudo: false
 cache:
   directories:
     - node_modules
+branches:
+  - master
 notifications:
-  email: false
+  email: true
 deploy:
   provider: npm
-  email: "sbueringer@gmail.com"
+  email: "robin@kearney.co.uk"
   api_key: $NPM_API_KEY
   on:
     tags: true
-
