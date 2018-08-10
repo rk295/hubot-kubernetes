@@ -2,6 +2,8 @@
 
 Query your Kubernetes resources using Hubot.
 
+[![Build Status](https://travis-ci.org/rk295/hubot-kubernetes.svg?branch=master)](https://travis-ci.org/rk295/hubot-kubernetes)
+
 ## Installation
 
 Add `sbueringer-hubot-kubernetes` to your `package.json` file:
